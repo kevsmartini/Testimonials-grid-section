@@ -106,9 +106,14 @@ h6 {
   gap: 0.9rem;
 }
 
-.user h1 {
+.user h1,
+.status {
   font-size: 1rem;
   color: var(--White);
+}
+.status {
+  font-weight: 300;
+  opacity: 0.5;
 }
 
 .text,
@@ -125,10 +130,6 @@ h6 {
   opacity: 0.7;
   font-size: 13px;
   text-align: left;
-}
-.user span {
-  font-weight: 300;
-  opacity: 0.5;
 }
 
 .user img {
@@ -159,11 +160,11 @@ h6 {
 .kira h1,
 .kira .title,
 .kira .text,
-.jeanette span,
+.kira .status,
 .jeanette h1,
 .jeanette .title,
 .jeanette .text,
-.jeanette span {
+.jeanette .status {
   color: var(--Very-dark-grayish-blue);
 }
 
@@ -176,8 +177,6 @@ h6 {
   background-color: var(--Very-dark-blackish-blue);
   grid-area: five;
 }
-
-
 
 @media (width < 1400px) {
   .container {
