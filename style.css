@@ -1,0 +1,200 @@
+/*CSS Reset*/
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*Colors*/
+
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 2%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+.container {
+  background-color: var(--Light-grayish-blue);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.testimonials-container {
+  max-width: 1100px;
+
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  grid-template-areas:
+    "one one two three "
+    "four five five three";
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 0.5rem;
+  padding: 30px;
+  gap: 0.8rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.user h1 {
+  font-size: 1rem;
+  color: var(--White);
+}
+
+.text,
+.title {
+  color: var(--White);
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.text {
+  opacity: 0.7;
+  font-size: 13px;
+  text-align: left;
+}
+.user span {
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.daniel {
+  background-color: var(--Moderate-violet);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 10%;
+  grid-area: one;
+}
+
+.jonathan {
+  background-color: var(--Very-dark-grayish-blue);
+  grid-area: two;
+}
+
+.kira {
+  background-color: var(--White);
+  grid-area: three;
+}
+
+.kira h1,
+.kira .title,
+.kira .text,
+.jeanette span,
+.jeanette h1,
+.jeanette .title,
+.jeanette .text,
+.jeanette span {
+  color: var(--Very-dark-grayish-blue);
+}
+
+.jeanette {
+  background-color: var(--White);
+  grid-area: four;
+}
+
+.patrick {
+  background-color: var(--Very-dark-blackish-blue);
+  grid-area: five;
+}
+
+
+
+@media (width < 1400px) {
+  .container {
+    padding: 20px;
+  }
+
+  .testimonials-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    grid-template-areas:
+      "one "
+      "one "
+      "two "
+      "four "
+      "five"
+      "five"
+      "three"
+      "three";
+  }
+}
